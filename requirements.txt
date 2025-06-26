@@ -1,0 +1,28 @@
+# Core Streamlit and web framework
+streamlit
+
+# LangChain and LangGraph dependencies
+langchain
+langchain-community
+langgraph
+langchain-groq
+
+# Database and SQL dependencies
+SQLAlchemy
+psycopg2-binary
+sqlalchemy
+
+# Data processing and visualization
+pandas
+plotly
+
+# Environment and utilities
+python-dotenv
+typing-extensions
+
+# Additional dependencies that might be needed
+numpy
+pydantic
+
+# Optional: For better error handling and logging
+loguru>=0.7.0
