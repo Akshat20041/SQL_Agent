@@ -30,7 +30,7 @@ llm = ChatGroq(temperature=0, model="meta-llama/llama-4-scout-17b-16e-instruct")
 # Initialize database
 try:
     db = SQLDatabase.from_uri(
-        "postgresql+psycopg2://postgres:%40Aksh%40t20@localhost:5432/postgres",
+        "postgresql+psycopg2://postgres:{DB_PASS}@localhost:5432/postgres",
         schema="dc_ai_test"
     )
     logger.info("Database connected successfully")
