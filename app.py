@@ -26,18 +26,14 @@ os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY")
 
 # Initialize LLM
 llm = ChatGroq(temperature=0, model="meta-llama/llama-4-scout-17b-16e-instruct")
-
+os.environ["DB_PASSWORD"] = os.getenv("DB_PASSWORD")
 # Initialize database
 try:
     # Replace the hardcoded connection with:
-    DB_HOST = os.getenv("DB_HOST", "localhost")
-    DB_USER = os.getenv("DB_USER", "postgres")
-    DB_PASSWORD = os.getenv("DB_PASSWORD")
-    DB_NAME = os.getenv("DB_NAME", "postgres")
-    DB_SCHEMA = os.getenv("DB_SCHEMA", "dc_ai_test")
-
-    connection_string = f"postgresql+psycopg2://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:5432/{DB_NAME}"
-    db = SQLDatabase.from_uri(connection_string, schema=DB_SCHEMA)
+    db = SQLDatabase.from_uri(
+        "postgresql+psycopg2://postgres:%40Aksh%40t20@localhost:5432/postgres",
+        schema="dc_ai_test"
+    )
     logger.info("Database connected successfully")
 except Exception as e:
     logger.error(f"Database connection failed: {e}")
