@@ -24,5 +24,3 @@ typing-extensions
 numpy
 pydantic
 
-# Optional: For better error handling and logging
-loguru>=0.7.0
